@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Number Validate Function</h1>
+<p>there are two function for two different scenerios</p>
+
+<input type="number" onkeypress="isNumberPress($event)"/>
+
+<script>
+
+// this function write for core javascript 
+function isNumberPress($event){
+  return event.charCode >= 48 && event.charCode <= 57
+}
+
+/* this function write for angular 
+when you use this function so use 
+'ng-keypress' property not 'onkeypress'
+*/
+function isNumberPress($event){
+            let amount = String.fromCharCode(event.which || event.keyCode)
+            let pattern = /^[1-9]\d*(\.\d+)?$/;
+            if(!pattern.test(amount)){
+            event.preventDefault()
+            }
+         }
+
+</script>
+
+</body>
+</html>
