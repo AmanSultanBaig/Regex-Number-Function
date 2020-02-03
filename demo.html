@@ -29,6 +29,16 @@ function isNumberPress($event){
             }
          }
 
+  // for blocking ctrl V in your regex 
+  //Jquery
+   $(document).ready(function(){
+   $('#txtInput').on("cut copy paste",function(e) {
+      e.preventDefault();
+   });
+});
+
+
+  
 </script>
 
 </body>
